@@ -339,6 +339,11 @@
             box-shadow: 0 4px 8px rgba(26, 188, 156, 0.3);
         }
         
+        .enroll-btn.enrolled {
+            background: linear-gradient(135deg, var(--success), #229954);
+            cursor: default;
+        }
+        
         .test-question {
             margin-bottom: 30px;
             padding-bottom: 25px;
@@ -467,6 +472,52 @@
             border-bottom: 1px solid var(--light);
         }
         
+        .job-list {
+            margin-top: 20px;
+        }
+        
+        .job-item {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .job-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .job-item h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .job-item p {
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+        
+        .apply-btn {
+            padding: 8px 16px;
+            background: linear-gradient(135deg, var(--accent), #16a085);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        
+        .apply-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(26, 188, 156, 0.3);
+        }
+        
         @media (max-width: 768px) {
             .options, .skill-list, .interview-slot {
                 grid-template-columns: 1fr;
@@ -539,19 +590,15 @@
             </div>
             <div class="step" id="step3">
                 3
-                <div class="step-label">Professions</div>
+                <div class="step-label">Skill Courses</div>
             </div>
             <div class="step" id="step4">
                 4
-                <div class="step-label">Skill Courses</div>
+                <div class="step-label">Skill Test</div>
             </div>
             <div class="step" id="step5">
                 5
-                <div class="step-label">Skill Test</div>
-            </div>
-            <div class="step" id="step6">
-                6
-                <div class="step-label">Interview</div>
+                <div class="step-label">Job Interview</div>
             </div>
         </div>
         
@@ -607,56 +654,6 @@
                     <div class="option" data-value="experiential">I learn best by doing and making mistakes</div>
                     <div class="option" data-value="collaborative">I learn effectively through discussion and collaboration</div>
                     <div class="option" data-value="self-directed">I prefer self-paced learning with minimal guidance</div>
-                </div>
-            </div>
-            
-            <div class="question">
-                <div class="question-text">6. How do you manage multiple priorities and deadlines?</div>
-                <div class="options">
-                    <div class="option" data-value="organized">I use systematic planning and prioritization techniques</div>
-                    <div class="option" data-value="adaptive">I adapt quickly and handle urgent matters as they arise</div>
-                    <div class="option" data-value="focused">I focus intensely on one task at a time</div>
-                    <div class="option" data-value="delegating">I delegate when possible and focus on critical tasks</div>
-                </div>
-            </div>
-            
-            <div class="question">
-                <div class="question-text">7. What is your communication style in professional settings?</div>
-                <div class="options">
-                    <div class="option" data-value="direct">Direct and concise, focusing on key points</div>
-                    <div class="option" data-value="diplomatic">Diplomatic, considering others' perspectives</div>
-                    <div class="option" data-value="detailed">Thorough and detailed with comprehensive explanations</div>
-                    <div class="option" data-value="persuasive">Persuasive, focused on influencing outcomes</div>
-                </div>
-            </div>
-            
-            <div class="question">
-                <div class="question-text">8. How do you approach leadership responsibilities?</div>
-                <div class="options">
-                    <div class="option" data-value="visionary">I focus on setting a clear vision and inspiring others</div>
-                    <div class="option" data-value="supportive">I prioritize supporting and developing team members</div>
-                    <div class="option" data-value="strategic">I concentrate on strategic direction and resource allocation</div>
-                    <div class="option" data-value="hands-on">I prefer being directly involved in execution</div>
-                </div>
-            </div>
-            
-            <div class="question">
-                <div class="question-text">9. How do you handle ambiguity and uncertainty?</div>
-                <div class="options">
-                    <div class="option" data-value="comfortable">I'm comfortable with ambiguity and can navigate it effectively</div>
-                    <div class="option" data-value="structured">I seek to create structure and clarity from ambiguity</div>
-                    <div class="option" data-value="cautious">I proceed cautiously and gather more information</div>
-                    <div class="option" data-value="decisive">I make decisions quickly even with limited information</div>
-                </div>
-            </div>
-            
-            <div class="question">
-                <div class="question-text">10. What motivates you most in your professional life?</div>
-                <div class="options">
-                    <div class="option" data-value="achievement">Achieving challenging goals and recognition</div>
-                    <div class="option" data-value="learning">Continuous learning and skill development</div>
-                    <div class="option" data-value="impact">Making a meaningful impact or contribution</div>
-                    <div class="option" data-value="security">Job security and stable career progression</div>
                 </div>
             </div>
             
@@ -722,97 +719,36 @@
             
             <div class="btn-container">
                 <button class="btn btn-secondary" id="backToSection1">Back</button>
-                <button class="btn" id="nextToSection3">Next: Professions</button>
+                <button class="btn" id="nextToSection3">Next: Skill Courses</button>
             </div>
         </div>
         
-        <!-- Section 3: Professions -->
+        <!-- Section 3: Skill Courses -->
         <div class="section" id="section3">
-            <h2>Explore Professions</h2>
-            <p class="section-description">Here are specific professions that align with your strengths, preferences, and the career fields we identified.</p>
-            
-            <div class="skill-list" id="professionsList">
-                <!-- Will be populated by JavaScript -->
-            </div>
-            
-            <div class="btn-container">
-                <button class="btn btn-secondary" id="backToSection2">Back</button>
-                <button class="btn" id="nextToSection4">Next: Skill Courses</button>
-            </div>
-        </div>
-        
-        <!-- Section 4: Skill Courses -->
-        <div class="section" id="section4">
             <h2>Skill Development Courses</h2>
-            <p class="section-description">Enhance your professional skills with these recommended courses tailored to your career interests.</p>
+            <p class="section-description">Enhance your professional skills with these recommended courses tailored to your career interests. Select courses to enroll and prepare for skill assessments.</p>
             
             <div class="course-list" id="coursesList">
                 <!-- Will be populated by JavaScript -->
             </div>
             
             <div class="btn-container">
-                <button class="btn btn-secondary" id="backToSection3">Back</button>
-                <button class="btn" id="nextToSection5">Next: Skill Test</button>
+                <button class="btn btn-secondary" id="backToSection2">Back</button>
+                <button class="btn" id="nextToSection4">Next: Skill Test</button>
             </div>
         </div>
         
-        <!-- Section 5: Skill Test -->
-        <div class="section" id="section5">
+        <!-- Section 4: Skill Test -->
+        <div class="section" id="section4">
             <h2>Professional Skills Assessment</h2>
-            <p class="section-description">Test your knowledge and skills in your areas of interest to benchmark your current capabilities.</p>
+            <p class="section-description" id="testDescription">Test your knowledge and skills in your areas of interest to benchmark your current capabilities.</p>
             
-            <div class="test-question">
-                <div class="question-text">1. In project management, what does the term "critical path" refer to?</div>
-                <div class="test-options">
-                    <div class="test-option" data-correct="false">The most difficult tasks in a project</div>
-                    <div class="test-option" data-correct="true">The sequence of tasks that determines the project duration</div>
-                    <div class="test-option" data-correct="false">Tasks that require specialized skills</div>
-                    <div class="test-option" data-correct="false">Tasks with the highest budget allocation</div>
-                </div>
-            </div>
-            
-            <div class="test-question">
-                <div class="question-text">2. In software development, what is the purpose of version control systems like Git?</div>
-                <div class="test-options">
-                    <div class="test-option" data-correct="false">To improve code execution speed</div>
-                    <div class="test-option" data-correct="false">To automatically fix coding errors</div>
-                    <div class="test-option" data-correct="true">To track changes and manage collaborative development</div>
-                    <div class="test-option" data-correct="false">To convert code between programming languages</div>
-                </div>
-            </div>
-            
-            <div class="test-question">
-                <div class="question-text">3. In financial analysis, what does ROI stand for and what does it measure?</div>
-                <div class="test-options">
-                    <div class="test-option" data-correct="false">Return on Investment - measures company liquidity</div>
-                    <div class="test-option" data-correct="true">Return on Investment - measures efficiency of an investment</div>
-                    <div class="test-option" data-correct="false">Rate of Interest - measures borrowing costs</div>
-                    <div class="test-option" data-correct="false">Risk of Insolvency - measures bankruptcy probability</div>
-                </div>
-            </div>
-            
-            <div class="test-question">
-                <div class="question-text">4. In marketing, what is the primary purpose of a SWOT analysis?</div>
-                <div class="test-options">
-                    <div class="test-option" data-correct="false">To analyze customer demographics</div>
-                    <div class="test-option" data-correct="false">To evaluate employee performance</div>
-                    <div class="test-option" data-correct="true">To assess strategic position by examining strengths, weaknesses, opportunities, threats</div>
-                    <div class="test-option" data-correct="false">To measure website traffic</div>
-                </div>
-            </div>
-            
-            <div class="test-question">
-                <div class="question-text">5. In healthcare administration, what does HIPAA primarily regulate?</div>
-                <div class="test-options">
-                    <div class="test-option" data-correct="false">Medical equipment standards</div>
-                    <div class="test-option" data-correct="false">Healthcare pricing</div>
-                    <div class="test-option" data-correct="true">Patient privacy and security of health information</div>
-                    <div class="test-option" data-correct="false">Medical education requirements</div>
-                </div>
+            <div id="testQuestions">
+                <!-- Will be populated by JavaScript -->
             </div>
             
             <div class="btn-container">
-                <button class="btn btn-secondary" id="backToSection4">Back</button>
+                <button class="btn btn-secondary" id="backToSection3">Back</button>
                 <button class="btn" id="submitTest">Submit Test</button>
             </div>
             
@@ -820,52 +756,63 @@
                 <h3>Your Assessment Results</h3>
                 <p id="testScore">Score: 0/5</p>
                 <p id="testFeedback">Feedback will appear here</p>
-                <button class="btn" id="nextToSection6">Schedule Career Consultation</button>
+                <button class="btn" id="nextToSection5">Schedule Job Interview</button>
             </div>
         </div>
         
-        <!-- Section 6: Interview -->
-        <div class="section" id="section6">
-            <h2>Schedule Your Career Consultation</h2>
-            <p class="section-description">Select an available time slot for your personalized career consultation with one of our career advisors.</p>
+        <!-- Section 5: Job Interview -->
+        <div class="section" id="section5">
+            <h2>Job Interview Opportunities</h2>
+            <p class="section-description">Based on your skills and assessment results, here are job opportunities that match your profile. Schedule interviews with potential employers.</p>
             
-            <div class="interview-slot">
-                <div class="slot" data-date="2023-11-15" data-time="10:00 AM">
-                    <div class="slot-date">November 15, 2023</div>
-                    <div class="slot-time">10:00 AM - 11:00 AM</div>
+            <div class="job-list" id="jobList">
+                <!-- Will be populated by JavaScript -->
+            </div>
+            
+            <div class="interview-slot hidden" id="interviewSection">
+                <h3>Select Interview Time Slot</h3>
+                <div class="interview-slot" id="interviewSlots">
+                    <div class="slot" data-date="2023-11-15" data-time="10:00 AM">
+                        <div class="slot-date">November 15, 2023</div>
+                        <div class="slot-time">10:00 AM - 11:00 AM</div>
+                    </div>
+                    <div class="slot" data-date="2023-11-15" data-time="2:00 PM">
+                        <div class="slot-date">November 15, 2023</div>
+                        <div class="slot-time">2:00 PM - 3:00 PM</div>
+                    </div>
+                    <div class="slot" data-date="2023-11-16" data-time="11:00 AM">
+                        <div class="slot-date">November 16, 2023</div>
+                        <div class="slot-time">11:00 AM - 12:00 PM</div>
+                    </div>
+                    <div class="slot" data-date="2023-11-17" data-time="9:00 AM">
+                        <div class="slot-date">November 17, 2023</div>
+                        <div class="slot-time">9:00 AM - 10:00 AM</div>
+                    </div>
+                    <div class="slot" data-date="2023-11-17" data-time="4:00 PM">
+                        <div class="slot-date">November 17, 2023</div>
+                        <div class="slot-time">4:00 PM - 5:00 PM</div>
+                    </div>
+                    <div class="slot" data-date="2023-11-18" data-time="1:00 PM">
+                        <div class="slot-date">November 18, 2023</div>
+                        <div class="slot-time">1:00 PM - 2:00 PM</div>
+                    </div>
                 </div>
-                <div class="slot" data-date="2023-11-15" data-time="2:00 PM">
-                    <div class="slot-date">November 15, 2023</div>
-                    <div class="slot-time">2:00 PM - 3:00 PM</div>
-                </div>
-                <div class="slot" data-date="2023-11-16" data-time="11:00 AM">
-                    <div class="slot-date">November 16, 2023</div>
-                    <div class="slot-time">11:00 AM - 12:00 PM</div>
-                </div>
-                <div class="slot" data-date="2023-11-17" data-time="9:00 AM">
-                    <div class="slot-date">November 17, 2023</div>
-                    <div class="slot-time">9:00 AM - 10:00 AM</div>
-                </div>
-                <div class="slot" data-date="2023-11-17" data-time="4:00 PM">
-                    <div class="slot-date">November 17, 2023</div>
-                    <div class="slot-time">4:00 PM - 5:00 PM</div>
-                </div>
-                <div class="slot" data-date="2023-11-18" data-time="1:00 PM">
-                    <div class="slot-date">November 18, 2023</div>
-                    <div class="slot-time">1:00 PM - 2:00 PM</div>
+                
+                <div class="btn-container">
+                    <button class="btn btn-secondary" id="backToJobs">Back to Jobs</button>
+                    <button class="btn" id="confirmInterview">Confirm Interview</button>
                 </div>
             </div>
             
             <div class="summary hidden" id="interviewConfirmation">
-                <h3>Consultation Scheduled Successfully!</h3>
-                <p id="confirmationDetails">Your career consultation has been scheduled.</p>
-                <p>You will receive a confirmation email with the meeting details and a link to join the video call. Please prepare any questions you have about your career assessment results.</p>
+                <h3>Interview Scheduled Successfully!</h3>
+                <p id="confirmationDetails">Your job interview has been scheduled.</p>
+                <p>You will receive a confirmation email with the meeting details and a link to join the video call. Please prepare by reviewing the job description and your skills.</p>
                 <button class="btn" id="restartProcess">Start New Assessment</button>
             </div>
             
             <div class="btn-container">
-                <button class="btn btn-secondary" id="backToSection5">Back</button>
-                <button class="btn" id="confirmInterview">Confirm Consultation</button>
+                <button class="btn btn-secondary" id="backToSection4">Back</button>
             </div>
         </div>
     </div>
@@ -873,18 +820,372 @@
     <script>
         // Current section tracking
         let currentSection = 1;
-        const totalSections = 6;
+        const totalSections = 5;
         
         // User responses storage
         const userResponses = {
             strengths: [],
             weaknesses: [],
             careerPaths: [],
-            selectedProfession: null,
+            enrolledCourses: [],
             testScore: 0,
-            interviewSlot: null
+            interviewSlot: null,
+            selectedJob: null
         };
         
+        // Course data with actual URLs
+        const coursesData = [
+            {
+                id: 1,
+                title: "Full Stack Web Development Bootcamp",
+                provider: "Tech Academy",
+                duration: "16 weeks",
+                level: "Beginner to Advanced",
+                format: "Live Online",
+                cost: "$4,500",
+                url: "https://www.techacademy.io/full-stack-bootcamp",
+                category: "Technology",
+                testQuestions: [
+                    {
+                        question: "Which of these is NOT a JavaScript data type?",
+                        options: [
+                            { text: "String", correct: false },
+                            { text: "Boolean", correct: false },
+                            { text: "Integer", correct: true },
+                            { text: "Undefined", correct: false }
+                        ]
+                    },
+                    {
+                        question: "What does CSS stand for?",
+                        options: [
+                            { text: "Computer Style Sheets", correct: false },
+                            { text: "Creative Style System", correct: false },
+                            { text: "Cascading Style Sheets", correct: true },
+                            { text: "Colorful Style Sheets", correct: false }
+                        ]
+                    },
+                    {
+                        question: "Which HTTP method is used to retrieve data from a server?",
+                        options: [
+                            { text: "POST", correct: false },
+                            { text: "PUT", correct: false },
+                            { text: "GET", correct: true },
+                            { text: "DELETE", correct: false }
+                        ]
+                    },
+                    {
+                        question: "What is the purpose of a database index?",
+                        options: [
+                            { text: "To store backup data", correct: false },
+                            { text: "To improve query performance", correct: true },
+                            { text: "To encrypt sensitive information", correct: false },
+                            { text: "To visualize data relationships", correct: false }
+                        ]
+                    },
+                    {
+                        question: "Which of these is a NoSQL database?",
+                        options: [
+                            { text: "MySQL", correct: false },
+                            { text: "PostgreSQL", correct: false },
+                            { text: "MongoDB", correct: true },
+                            { text: "SQLite", correct: false }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 2,
+                title: "Data Science with Python Specialization",
+                provider: "DataCamp",
+                duration: "4 months",
+                level: "Intermediate",
+                format: "Self-Paced Online",
+                cost: "$399/year",
+                url: "https://www.datacamp.com/tracks/data-scientist-with-python",
+                category: "Technology",
+                testQuestions: [
+                    {
+                        question: "Which Python library is primarily used for data manipulation and analysis?",
+                        options: [
+                            { text: "NumPy", correct: false },
+                            { text: "Pandas", correct: true },
+                            { text: "Matplotlib", correct: false },
+                            { text: "Scikit-learn", correct: false }
+                        ]
+                    },
+                    {
+                        question: "What is the purpose of train-test split in machine learning?",
+                        options: [
+                            { text: "To increase model complexity", correct: false },
+                            { text: "To evaluate model performance on unseen data", correct: true },
+                            { text: "To reduce training time", correct: false },
+                            { text: "To visualize data distributions", correct: false }
+                        ]
+                    },
+                    {
+                        question: "Which metric is used for evaluating classification models?",
+                        options: [
+                            { text: "Mean Absolute Error", correct: false },
+                            { text: "R-squared", correct: false },
+                            { text: "Accuracy", correct: true },
+                            { text: "Root Mean Square Error", correct: false }
+                        ]
+                    },
+                    {
+                        question: "What does SQL stand for?",
+                        options: [
+                            { text: "Structured Question Language", correct: false },
+                            { text: "Standard Query Language", correct: false },
+                            { text: "Structured Query Language", correct: true },
+                            { text: "System Query Language", correct: false }
+                        ]
+                    },
+                    {
+                        question: "Which of these is a supervised learning algorithm?",
+                        options: [
+                            { text: "K-means clustering", correct: false },
+                            { text: "Principal Component Analysis", correct: false },
+                            { text: "Decision Trees", correct: true },
+                            { text: "Association Rules", correct: false }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 3,
+                title: "Project Management Professional (PMP) Certification Prep",
+                provider: "Project Management Institute",
+                duration: "8 weeks",
+                level: "Intermediate",
+                format: "Live Online",
+                cost: "$1,500",
+                url: "https://www.pmi.org/certifications/project-management-pmp",
+                category: "Business",
+                testQuestions: [
+                    {
+                        question: "What are the three primary constraints in project management?",
+                        options: [
+                            { text: "Time, Cost, Scope", correct: true },
+                            { text: "Time, Quality, Risk", correct: false },
+                            { text: "Cost, Quality, Resources", correct: false },
+                            { text: "Scope, Risk, Stakeholders", correct: false }
+                        ]
+                    },
+                    {
+                        question: "Which process group includes developing a project charter?",
+                        options: [
+                            { text: "Planning", correct: false },
+                            { text: "Executing", correct: false },
+                            { text: "Initiating", correct: true },
+                            { text: "Monitoring and Controlling", correct: false }
+                        ]
+                    },
+                    {
+                        question: "What is the purpose of a Work Breakdown Structure (WBS)?",
+                        options: [
+                            { text: "To assign team responsibilities", correct: false },
+                            { text: "To define project deliverables and work", correct: true },
+                            { text: "To track project expenses", correct: false },
+                            { text: "To schedule project activities", correct: false }
+                        ]
+                    },
+                    {
+                        question: "Which risk response strategy involves changing the project plan to eliminate the risk?",
+                        options: [
+                            { text: "Avoid", correct: true },
+                            { text: "Transfer", correct: false },
+                            { text: "Mitigate", correct: false },
+                            { text: "Accept", correct: false }
+                        ]
+                    },
+                    {
+                        question: "What does EVM stand for in project management?",
+                        options: [
+                            { text: "Earned Value Management", correct: true },
+                            { text: "Effective Value Measurement", correct: false },
+                            { text: "Earned Volume Management", correct: false },
+                            { text: "Expected Value Method", correct: false }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 4,
+                title: "Digital Marketing Mastery",
+                provider: "Google Digital Garage",
+                duration: "6 weeks",
+                level: "Beginner to Intermediate",
+                format: "Self-Paced Online",
+                cost: "Free",
+                url: "https://learndigital.withgoogle.com/digitalgarage/course/digital-marketing",
+                category: "Business",
+                testQuestions: [
+                    {
+                        question: "What does SEO stand for?",
+                        options: [
+                            { text: "Search Engine Optimization", correct: true },
+                            { text: "Social Engagement Optimization", correct: false },
+                            { text: "Site Experience Optimization", correct: false },
+                            { text: "Search Engagement Objective", correct: false }
+                        ]
+                    },
+                    {
+                        question: "Which metric measures the percentage of visitors who take a desired action?",
+                        options: [
+                            { text: "Bounce Rate", correct: false },
+                            { text: "Click-Through Rate", correct: false },
+                            { text: "Conversion Rate", correct: true },
+                            { text: "Impression Share", correct: false }
+                        ]
+                    },
+                    {
+                        question: "What is the primary goal of content marketing?",
+                        options: [
+                            { text: "To directly sell products", correct: false },
+                            { text: "To build brand awareness and trust", correct: true },
+                            { text: "To increase social media followers", correct: false },
+                            { text: "To improve website loading speed", correct: false }
+                        ]
+                    },
+                    {
+                        question: "Which platform is primarily used for B2B marketing?",
+                        options: [
+                            { text: "Instagram", correct: false },
+                            { text: "TikTok", correct: false },
+                            { text: "LinkedIn", correct: true },
+                            { text: "Pinterest", correct: false }
+                        ]
+                    },
+                    {
+                        question: "What does PPC stand for in digital marketing?",
+                        options: [
+                            { text: "Pay Per Click", correct: true },
+                            { text: "Professional Page Content", correct: false },
+                            { text: "Primary Platform Campaign", correct: false },
+                            { text: "Public Profile Creation", correct: false }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 5,
+                title: "UX/UI Design Bootcamp",
+                provider: "Design Institute",
+                duration: "12 weeks",
+                level: "Beginner to Intermediate",
+                format: "Live Online",
+                cost: "$3,200",
+                url: "https://www.designinstitute.io/ux-ui-bootcamp",
+                category: "Creative",
+                testQuestions: [
+                    {
+                        question: "What is the primary goal of user research in UX design?",
+                        options: [
+                            { text: "To create visually appealing interfaces", correct: false },
+                            { text: "To understand user needs and behaviors", correct: true },
+                            { text: "To implement the latest design trends", correct: false },
+                            { text: "To reduce development costs", correct: false }
+                        ]
+                    },
+                    {
+                        question: "What does UI stand for?",
+                        options: [
+                            { text: "User Integration", correct: false },
+                            { text: "Universal Interface", correct: false },
+                            { text: "User Interface", correct: true },
+                            { text: "Utility Index", correct: false }
+                        ]
+                    },
+                    {
+                        question: "Which design principle emphasizes the relationship between elements that are close to each other?",
+                        options: [
+                            { text: "Similarity", correct: false },
+                            { text: "Proximity", correct: true },
+                            { text: "Continuity", correct: false },
+                            { text: "Closure", correct: false }
+                        ]
+                    },
+                    {
+                        question: "What is a wireframe in UX design?",
+                        options: [
+                            { text: "A high-fidelity visual design", correct: false },
+                            { text: "A basic layout showing structure and content", correct: true },
+                            { text: "A functional prototype", correct: false },
+                            { text: "A style guide for colors and typography", correct: false }
+                        ]
+                    },
+                    {
+                        question: "Which tool is commonly used for creating interactive prototypes?",
+                        options: [
+                            { text: "Adobe Photoshop", correct: false },
+                            { text: "Figma", correct: true },
+                            { text: "Microsoft Excel", correct: false },
+                            { text: "Google Analytics", correct: false }
+                        ]
+                    }
+                ]
+            }
+        ];
+
+        // Job data
+        const jobsData = [
+            {
+                id: 1,
+                title: "Frontend Developer",
+                company: "TechSolutions Inc.",
+                location: "Remote",
+                type: "Full-time",
+                salary: "$85,000 - $120,000",
+                description: "We're looking for a skilled Frontend Developer to join our growing team. You'll be responsible for building responsive web applications using modern JavaScript frameworks.",
+                requirements: ["React", "JavaScript", "HTML/CSS", "REST APIs"],
+                category: "Technology"
+            },
+            {
+                id: 2,
+                title: "Data Analyst",
+                company: "DataInsights Corp",
+                location: "New York, NY",
+                type: "Full-time",
+                salary: "$70,000 - $95,000",
+                description: "Join our analytics team to help transform data into actionable insights. You'll work with stakeholders across the business to drive data-informed decisions.",
+                requirements: ["SQL", "Python", "Data Visualization", "Statistics"],
+                category: "Technology"
+            },
+            {
+                id: 3,
+                title: "Project Manager",
+                company: "Enterprise Solutions",
+                location: "Chicago, IL",
+                type: "Full-time",
+                salary: "$90,000 - $130,000",
+                description: "We need an experienced Project Manager to lead our software development projects. You'll coordinate cross-functional teams and ensure successful project delivery.",
+                requirements: ["Agile Methodology", "Stakeholder Management", "Budgeting", "Risk Management"],
+                category: "Business"
+            },
+            {
+                id: 4,
+                title: "Digital Marketing Specialist",
+                company: "Growth Marketing Agency",
+                location: "Remote",
+                type: "Full-time",
+                salary: "$60,000 - $85,000",
+                description: "Help our clients grow their online presence through strategic digital marketing campaigns. You'll manage SEO, PPC, social media, and content marketing initiatives.",
+                requirements: ["SEO", "Google Ads", "Content Strategy", "Analytics"],
+                category: "Business"
+            },
+            {
+                id: 5,
+                title: "UX/UI Designer",
+                company: "Creative Digital Studio",
+                location: "San Francisco, CA",
+                type: "Full-time",
+                salary: "$80,000 - $110,000",
+                description: "Join our design team to create beautiful and intuitive user experiences for web and mobile applications. You'll conduct user research and create wireframes and prototypes.",
+                requirements: ["Figma", "User Research", "Wireframing", "Prototyping"],
+                category: "Creative"
+            }
+        ];
+
         // DOM Elements
         const progressBar = document.getElementById('progressBar');
         const steps = document.querySelectorAll('.step');
@@ -944,39 +1245,24 @@
             showSection(3);
         });
         
-        // Section 3: Professions
+        // Section 3: Skill Courses
         document.getElementById('backToSection2').addEventListener('click', function() {
             showSection(2);
         });
         
         document.getElementById('nextToSection4').addEventListener('click', function() {
-            showSection(4);
+            // Only proceed if at least one course is enrolled
+            if (userResponses.enrolledCourses.length > 0) {
+                showSection(4);
+                generateSkillTest();
+            } else {
+                alert('Please enroll in at least one course to proceed to the skill test.');
+            }
         });
         
-        // Section 4: Skill Courses
+        // Section 4: Skill Test
         document.getElementById('backToSection3').addEventListener('click', function() {
             showSection(3);
-        });
-        
-        document.getElementById('nextToSection5').addEventListener('click', function() {
-            showSection(5);
-        });
-        
-        // Section 5: Skill Test
-        document.getElementById('backToSection4').addEventListener('click', function() {
-            showSection(4);
-        });
-        
-        document.querySelectorAll('.test-option').forEach(option => {
-            option.addEventListener('click', function() {
-                // Remove selected class from siblings in the same question
-                this.parentElement.querySelectorAll('.test-option').forEach(sibling => {
-                    sibling.classList.remove('selected');
-                });
-                
-                // Add selected class to clicked option
-                this.classList.add('selected');
-            });
         });
         
         document.getElementById('submitTest').addEventListener('click', function() {
@@ -984,13 +1270,18 @@
             document.getElementById('testResults').classList.remove('hidden');
         });
         
-        document.getElementById('nextToSection6').addEventListener('click', function() {
-            showSection(6);
+        document.getElementById('nextToSection5').addEventListener('click', function() {
+            showSection(5);
         });
         
-        // Section 6: Interview
-        document.getElementById('backToSection5').addEventListener('click', function() {
-            showSection(5);
+        // Section 5: Job Interview
+        document.getElementById('backToSection4').addEventListener('click', function() {
+            showSection(4);
+        });
+        
+        document.getElementById('backToJobs').addEventListener('click', function() {
+            document.getElementById('interviewSection').classList.add('hidden');
+            document.getElementById('jobList').classList.remove('hidden');
         });
         
         document.querySelectorAll('.slot').forEach(slot => {
@@ -1014,10 +1305,10 @@
         document.getElementById('confirmInterview').addEventListener('click', function() {
             if (userResponses.interviewSlot) {
                 document.getElementById('confirmationDetails').textContent = 
-                    `Your career consultation is scheduled for ${userResponses.interviewSlot.date} at ${userResponses.interviewSlot.time}.`;
+                    `Your interview for ${userResponses.selectedJob.title} at ${userResponses.selectedJob.company} is scheduled for ${userResponses.interviewSlot.date} at ${userResponses.interviewSlot.time}.`;
                 document.getElementById('interviewConfirmation').classList.remove('hidden');
             } else {
-                alert('Please select a consultation slot before confirming.');
+                alert('Please select an interview slot before confirming.');
             }
         });
         
@@ -1045,8 +1336,15 @@
                 slot.classList.remove('selected');
             });
             
+            document.querySelectorAll('.enroll-btn').forEach(btn => {
+                btn.textContent = 'Enroll Now';
+                btn.classList.remove('enrolled');
+            });
+            
             document.getElementById('testResults').classList.add('hidden');
             document.getElementById('interviewConfirmation').classList.add('hidden');
+            document.getElementById('interviewSection').classList.add('hidden');
+            document.getElementById('jobList').classList.remove('hidden');
         });
         
         // Analysis and content generation functions
@@ -1091,11 +1389,11 @@
             // Generate career fields
             generateCareerFields();
             
-            // Generate professions list
-            generateProfessionsList();
-            
             // Generate courses list
             generateCoursesList();
+            
+            // Generate jobs list
+            generateJobsList();
         }
         
         function generateCareerFields() {
@@ -1300,166 +1598,11 @@
             });
         }
         
-        function generateProfessionsList() {
-            const professionsList = document.getElementById('professionsList');
-            professionsList.innerHTML = '';
-            
-            const professions = [
-                {
-                    title: "Software Engineer",
-                    industry: "Technology",
-                    salary: "$85,000 - $150,000",
-                    growth: "22% (Much faster than average)",
-                    skills: ["Programming", "System Design", "Problem-solving"],
-                    demand: "High"
-                },
-                {
-                    title: "Data Scientist",
-                    industry: "Technology/Business",
-                    salary: "$95,000 - $165,000",
-                    growth: "31% (Much faster than average)",
-                    skills: ["Statistics", "Machine Learning", "Data Visualization"],
-                    demand: "Very High"
-                },
-                {
-                    title: "Project Manager",
-                    industry: "Various Industries",
-                    salary: "$75,000 - $130,000",
-                    growth: "7% (As fast as average)",
-                    skills: ["Leadership", "Planning", "Communication"],
-                    demand: "High"
-                },
-                {
-                    title: "Marketing Manager",
-                    industry: "Business",
-                    salary: "$70,000 - $145,000",
-                    growth: "10% (Faster than average)",
-                    skills: ["Strategy", "Analytics", "Campaign Management"],
-                    demand: "Medium"
-                },
-                {
-                    title: "UX Designer",
-                    industry: "Technology/Design",
-                    salary: "$75,000 - $125,000",
-                    growth: "13% (Faster than average)",
-                    skills: ["User Research", "Wireframing", "Prototyping"],
-                    demand: "High"
-                },
-                {
-                    title: "Financial Analyst",
-                    industry: "Finance",
-                    salary: "$65,000 - $120,000",
-                    growth: "6% (As fast as average)",
-                    skills: ["Financial Modeling", "Data Analysis", "Reporting"],
-                    demand: "Medium"
-                },
-                {
-                    title: "Healthcare Administrator",
-                    industry: "Healthcare",
-                    salary: "$70,000 - $150,000",
-                    growth: "28% (Much faster than average)",
-                    skills: ["Operations Management", "Regulatory Compliance", "Budgeting"],
-                    demand: "High"
-                },
-                {
-                    title: "Instructional Designer",
-                    industry: "Education/Corporate",
-                    salary: "$60,000 - $105,000",
-                    growth: "6% (As fast as average)",
-                    skills: ["Curriculum Development", "E-learning", "Assessment"],
-                    demand: "Medium"
-                }
-            ];
-            
-            professions.forEach(profession => {
-                const professionElement = document.createElement('div');
-                professionElement.className = 'skill-item';
-                professionElement.innerHTML = `
-                    <h4>${profession.title}</h4>
-                    <p><strong>Industry:</strong> ${profession.industry}</p>
-                    <p><strong>Salary Range:</strong> ${profession.salary}</p>
-                    <p><strong>Job Growth:</strong> ${profession.growth}</p>
-                    <p><strong>Market Demand:</strong> <span style="color: ${profession.demand === 'Very High' ? '#27ae60' : profession.demand === 'High' ? '#3498db' : '#f39c12'}">${profession.demand}</span></p>
-                    <div style="margin-top: 10px;">
-                        ${profession.skills.map(skill => `<span class="tag tag-primary">${skill}</span>`).join('')}
-                    </div>
-                `;
-                professionsList.appendChild(professionElement);
-            });
-        }
-        
         function generateCoursesList() {
             const coursesList = document.getElementById('coursesList');
             coursesList.innerHTML = '';
             
-            const courses = [
-                {
-                    title: "Full Stack Web Development Bootcamp",
-                    provider: "Tech Academy",
-                    duration: "16 weeks",
-                    level: "Beginner to Advanced",
-                    format: "Live Online",
-                    cost: "$4,500"
-                },
-                {
-                    title: "Data Science with Python Specialization",
-                    provider: "DataCamp",
-                    duration: "4 months",
-                    level: "Intermediate",
-                    format: "Self-Paced Online",
-                    cost: "$399/year"
-                },
-                {
-                    title: "Project Management Professional (PMP) Certification Prep",
-                    provider: "Project Management Institute",
-                    duration: "8 weeks",
-                    level: "Intermediate",
-                    format: "Live Online",
-                    cost: "$1,500"
-                },
-                {
-                    title: "Digital Marketing Mastery",
-                    provider: "Google Digital Garage",
-                    duration: "6 weeks",
-                    level: "Beginner to Intermediate",
-                    format: "Self-Paced Online",
-                    cost: "Free"
-                },
-                {
-                    title: "UX/UI Design Bootcamp",
-                    provider: "Design Institute",
-                    duration: "12 weeks",
-                    level: "Beginner to Intermediate",
-                    format: "Live Online",
-                    cost: "$3,200"
-                },
-                {
-                    title: "Financial Analysis & Modeling",
-                    provider: "Corporate Finance Institute",
-                    duration: "10 weeks",
-                    level: "Intermediate",
-                    format: "Self-Paced Online",
-                    cost: "$497"
-                },
-                {
-                    title: "Healthcare Administration Certificate",
-                    provider: "American College of Healthcare Executives",
-                    duration: "6 months",
-                    level: "Intermediate",
-                    format: "Hybrid",
-                    cost: "$2,800"
-                },
-                {
-                    title: "Instructional Design Fundamentals",
-                    provider: "Association for Talent Development",
-                    duration: "8 weeks",
-                    level: "Beginner",
-                    format: "Live Online",
-                    cost: "$1,200"
-                }
-            ];
-            
-            courses.forEach(course => {
+            coursesData.forEach(course => {
                 const courseElement = document.createElement('div');
                 courseElement.className = 'course-item';
                 courseElement.innerHTML = `
@@ -1468,9 +1611,118 @@
                         <p><strong>Provider:</strong> ${course.provider} | <strong>Duration:</strong> ${course.duration} | <strong>Level:</strong> ${course.level}</p>
                         <p><strong>Format:</strong> ${course.format} | <strong>Cost:</strong> ${course.cost}</p>
                     </div>
-                    <button class="enroll-btn">Enroll Now</button>
+                    <button class="enroll-btn" data-id="${course.id}">Enroll Now</button>
                 `;
                 coursesList.appendChild(courseElement);
+            });
+            
+            // Add event listeners to enroll buttons
+            document.querySelectorAll('.enroll-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const courseId = parseInt(this.getAttribute('data-id'));
+                    const course = coursesData.find(c => c.id === courseId);
+                    
+                    if (course) {
+                        // Check if already enrolled
+                        if (!userResponses.enrolledCourses.some(c => c.id === courseId)) {
+                            // Open course URL in new tab
+                            window.open(course.url, '_blank');
+                            
+                            // Add to enrolled courses
+                            userResponses.enrolledCourses.push(course);
+                            
+                            // Update button
+                            this.textContent = 'Enrolled';
+                            this.classList.add('enrolled');
+                        } else {
+                            alert('You are already enrolled in this course.');
+                        }
+                    }
+                });
+            });
+        }
+        
+        function generateSkillTest() {
+            const testQuestionsContainer = document.getElementById('testQuestions');
+            testQuestionsContainer.innerHTML = '';
+            
+            // Use the first enrolled course for the test
+            if (userResponses.enrolledCourses.length > 0) {
+                const course = userResponses.enrolledCourses[0];
+                document.getElementById('testDescription').textContent = 
+                    `Test your knowledge of ${course.title} to benchmark your current capabilities.`;
+                
+                course.testQuestions.forEach((q, index) => {
+                    const questionElement = document.createElement('div');
+                    questionElement.className = 'test-question';
+                    questionElement.innerHTML = `
+                        <div class="question-text">${index + 1}. ${q.question}</div>
+                        <div class="test-options">
+                            ${q.options.map(opt => 
+                                `<div class="test-option" data-correct="${opt.correct}">${opt.text}</div>`
+                            ).join('')}
+                        </div>
+                    `;
+                    testQuestionsContainer.appendChild(questionElement);
+                });
+                
+                // Add event listeners to test options
+                document.querySelectorAll('.test-option').forEach(option => {
+                    option.addEventListener('click', function() {
+                        // Remove selected class from siblings in the same question
+                        this.parentElement.querySelectorAll('.test-option').forEach(sibling => {
+                            sibling.classList.remove('selected');
+                        });
+                        
+                        // Add selected class to clicked option
+                        this.classList.add('selected');
+                    });
+                });
+            }
+        }
+        
+        function generateJobsList() {
+            const jobListContainer = document.getElementById('jobList');
+            jobListContainer.innerHTML = '';
+            
+            // Filter jobs based on enrolled courses
+            const enrolledCategories = userResponses.enrolledCourses.map(course => course.category);
+            const filteredJobs = jobsData.filter(job => enrolledCategories.includes(job.category));
+            
+            if (filteredJobs.length === 0) {
+                jobListContainer.innerHTML = '<p>No job matches found based on your enrolled courses. Please enroll in courses to see relevant job opportunities.</p>';
+                return;
+            }
+            
+            filteredJobs.forEach(job => {
+                const jobElement = document.createElement('div');
+                jobElement.className = 'job-item';
+                jobElement.innerHTML = `
+                    <h4>${job.title}</h4>
+                    <p><strong>Company:</strong> ${job.company} | <strong>Location:</strong> ${job.location} | <strong>Type:</strong> ${job.type}</p>
+                    <p><strong>Salary:</strong> ${job.salary}</p>
+                    <p>${job.description}</p>
+                    <div style="margin-top: 10px;">
+                        <strong>Requirements:</strong>
+                        ${job.requirements.map(req => `<span class="tag tag-primary">${req}</span>`).join('')}
+                    </div>
+                    <button class="apply-btn" data-id="${job.id}" style="margin-top: 15px;">Apply Now</button>
+                `;
+                jobListContainer.appendChild(jobElement);
+            });
+            
+            // Add event listeners to apply buttons
+            document.querySelectorAll('.apply-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const jobId = parseInt(this.getAttribute('data-id'));
+                    const job = jobsData.find(j => j.id === jobId);
+                    
+                    if (job) {
+                        userResponses.selectedJob = job;
+                        document.getElementById('jobList').classList.add('hidden');
+                        document.getElementById('interviewSection').classList.remove('hidden');
+                    }
+                });
             });
         }
         
@@ -1492,11 +1744,11 @@
             
             let feedback = '';
             if (score >= 4) {
-                feedback = 'Excellent! You have strong foundational knowledge across multiple professional domains.';
+                feedback = 'Excellent! You have strong foundational knowledge in this field. You are well-prepared for job interviews.';
             } else if (score >= 3) {
-                feedback = 'Good job! You have a solid understanding of core professional concepts. Consider focusing on specific areas of interest.';
+                feedback = 'Good job! You have a solid understanding of core concepts. Consider reviewing the course materials to strengthen your knowledge.';
             } else {
-                feedback = 'This indicates areas where you could benefit from additional learning. The recommended courses will help strengthen your knowledge base.';
+                feedback = 'This indicates areas where you could benefit from additional learning. We recommend completing the course before proceeding to job interviews.';
             }
             
             document.getElementById('testFeedback').textContent = feedback;
