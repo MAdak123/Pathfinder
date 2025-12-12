@@ -772,29 +772,21 @@
             <div class="interview-slot hidden" id="interviewSection">
                 <h3>Select Interview Time Slot</h3>
                 <div class="interview-slot" id="interviewSlots">
-                    <div class="slot" data-date="2023-11-15" data-time="10:00 AM">
-                        <div class="slot-date">November 15, 2023</div>
-                        <div class="slot-time">10:00 AM - 11:00 AM</div>
+                    <div class="slot" data-date="2023-12-23" data-time="11:00 AM">
+                        <div class="slot-date">December 23, 2023</div>
+                        <div class="slot-time">11:00 AM - 12:00 PM IST</div>
                     </div>
-                    <div class="slot" data-date="2023-11-15" data-time="2:00 PM">
-                        <div class="slot-date">November 15, 2023</div>
-                        <div class="slot-time">2:00 PM - 3:00 PM</div>
+                    <div class="slot" data-date="2023-12-24" data-time="2:00 PM">
+                        <div class="slot-date">December 24, 2023</div>
+                        <div class="slot-time">2:00 PM - 3:00 PM IST</div>
                     </div>
-                    <div class="slot" data-date="2023-11-16" data-time="11:00 AM">
-                        <div class="slot-date">November 16, 2023</div>
-                        <div class="slot-time">11:00 AM - 12:00 PM</div>
+                    <div class="slot" data-date="2023-12-26" data-time="11:00 AM">
+                        <div class="slot-date">December 26, 2023</div>
+                        <div class="slot-time">11:00 AM - 12:00 PM IST</div>
                     </div>
-                    <div class="slot" data-date="2023-11-17" data-time="9:00 AM">
-                        <div class="slot-date">November 17, 2023</div>
-                        <div class="slot-time">9:00 AM - 10:00 AM</div>
-                    </div>
-                    <div class="slot" data-date="2023-11-17" data-time="4:00 PM">
-                        <div class="slot-date">November 17, 2023</div>
-                        <div class="slot-time">4:00 PM - 5:00 PM</div>
-                    </div>
-                    <div class="slot" data-date="2023-11-18" data-time="1:00 PM">
-                        <div class="slot-date">November 18, 2023</div>
-                        <div class="slot-time">1:00 PM - 2:00 PM</div>
+                    <div class="slot" data-date="2023-12-27" data-time="9:00 AM">
+                        <div class="slot-date">December 27, 2023</div>
+                        <div class="slot-time">9:00 AM - 10:00 AM IST</div>
                     </div>
                 </div>
                 
@@ -1270,8 +1262,35 @@
             document.getElementById('testResults').classList.remove('hidden');
         });
         
+        // SECTION 5: ENHANCED INTERVIEW SCHEDULING LOGIC
         document.getElementById('nextToSection5').addEventListener('click', function() {
-            showSection(5);
+            // Check if score is greater than 2 (out of 5)
+            if (userResponses.testScore > 2) {
+                // Auto-schedule interview for December 23rd, 11 AM IST
+                userResponses.interviewSlot = {
+                    date: "December 23, 2023",
+                    time: "11:00 AM - 12:00 PM IST"
+                };
+                
+                // Auto-select a job (first matching job)
+                const enrolledCategories = userResponses.enrolledCourses.map(course => course.category);
+                const matchingJob = jobsData.find(job => enrolledCategories.includes(job.category)) || jobsData[0];
+                userResponses.selectedJob = matchingJob;
+                
+                // Show confirmation immediately
+                document.getElementById('confirmationDetails').textContent = 
+                    `Your interview for ${matchingJob.title} at ${matchingJob.company} is scheduled for December 23, 2023 at 11:00 AM IST.`;
+                
+                // Go to section 5 and show confirmation
+                showSection(5);
+                setTimeout(function() {
+                    document.getElementById('interviewConfirmation').classList.remove('hidden');
+                    document.getElementById('jobList').classList.add('hidden');
+                }, 100);
+            } else {
+                alert("Your score is below cut-off marks (score ≤ 2/5). Please improve your skills and retry the test.");
+                return;
+            }
         });
         
         // Section 5: Job Interview
@@ -1284,25 +1303,13 @@
             document.getElementById('jobList').classList.remove('hidden');
         });
         
-        document.querySelectorAll('.slot').forEach(slot => {
-            slot.addEventListener('click', function() {
-                // Remove selected class from all slots
-                document.querySelectorAll('.slot').forEach(s => {
-                    s.classList.remove('selected');
-                });
-                
-                // Add selected class to clicked slot
-                this.classList.add('selected');
-                
-                // Store selected slot
-                userResponses.interviewSlot = {
-                    date: this.getAttribute('data-date'),
-                    time: this.getAttribute('data-time')
-                };
-            });
-        });
-        
+        // MODIFIED: Only allow interview confirmation if score > 2
         document.getElementById('confirmInterview').addEventListener('click', function() {
+            if (userResponses.testScore <= 2) {
+                alert("Your score is below cut-off marks (score ≤ 2/5). You cannot schedule an interview. Please retake the test.");
+                return;
+            }
+            
             if (userResponses.interviewSlot) {
                 document.getElementById('confirmationDetails').textContent = 
                     `Your interview for ${userResponses.selectedJob.title} at ${userResponses.selectedJob.company} is scheduled for ${userResponses.interviewSlot.date} at ${userResponses.interviewSlot.time}.`;
@@ -1311,6 +1318,23 @@
                 alert('Please select an interview slot before confirming.');
             }
         });
+        
+        // MODIFIED: Apply button now checks score
+        function applyForJob(jobId) {
+            const job = jobsData.find(j => j.id === jobId);
+            
+            if (job) {
+                // Check if score is greater than 2
+                if (userResponses.testScore <= 2) {
+                    alert("Your score is below cut-off marks (score ≤ 2/5). You cannot schedule an interview. Please retake the test.");
+                    return;
+                }
+                
+                userResponses.selectedJob = job;
+                document.getElementById('jobList').classList.add('hidden');
+                document.getElementById('interviewSection').classList.remove('hidden');
+            }
+        }
         
         document.getElementById('restartProcess').addEventListener('click', function() {
             // Reset the process
@@ -1715,13 +1739,7 @@
             document.querySelectorAll('.apply-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const jobId = parseInt(this.getAttribute('data-id'));
-                    const job = jobsData.find(j => j.id === jobId);
-                    
-                    if (job) {
-                        userResponses.selectedJob = job;
-                        document.getElementById('jobList').classList.add('hidden');
-                        document.getElementById('interviewSection').classList.remove('hidden');
-                    }
+                    applyForJob(jobId);
                 });
             });
         }
